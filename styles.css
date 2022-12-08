@@ -79,7 +79,11 @@ h3 {
   background-color: #FFF;
 }
 .skill .progress.percentage {
+  transition: width 2s ease;
+  width: 0;
   background-color: #F6A737;
+  animation-name: progress-bar;
+  animation-duration: 2s;
 }
 
 .idioma {
@@ -97,4 +101,16 @@ h3 {
 }
 .idioma .stars li .fa-solid {
   color: #F6A737;
+}
+
+@keyframes progress-bar {
+  0% {
+    width: 0;
+  }
+  50% {
+    width: 100%;
+  }
+  100% {
+    width: 0;
+  }
 }
