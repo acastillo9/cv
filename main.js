@@ -201,3 +201,114 @@ const propina = valorFactura >= 50 && valorFactura <= 300
   ? valorFactura * 0.15
   : valorFactura * 0.2;
 console.log(`El valor de la factura es ${valorFactura}, la propina es ${propina} y el valor total es ${valorFactura + propina}`)
+
+// functions
+// función nombrada
+function nombreFuncion(nombre, edad, estatura) {
+  console.log(`el nombre es ${nombre}, la edad es ${edad} y la estatura es ${estatura}`);
+}
+nombreFuncion('Juan', 28, 1.80);
+
+// Hoisting
+
+// función anonima
+const calcularMayorEdad = function (edad) {
+  const abc = 0;
+  if (edad >= 18) {
+    console.log('Mayor de edad');
+  } else {
+    console.log('Menor de edad');
+  }
+  console.log(this);
+};
+calcularMayorEdad(18);
+// función arrow
+const calcularRaizCuadrada = (numero) => Math.sqrt(numero);
+console.log(calcularRaizCuadrada(25));
+
+// challenge 5
+
+// DATOS DE LA PRUEBA 1: Los delfines logran un puntaje de 44, 23 y 71. Los koalas de 65, 54 y 49
+// DATOS DE LA PRUEBA 2: Los delfines logran un puntaje de 85, 54 y 41. Los koalas de 23, 34 y 27
+
+const calcularPromedio = (num1, num2, num3) => {
+  return (num1 + num2 + num3) / 3;
+};
+
+const promDelfines = calcularPromedio(44, 23, 71);
+const promKoalas = calcularPromedio(65, 54, 49);
+
+const verificarGanador = (promDelfines, promKoalas) => {
+  if (promDelfines >= 2 * promKoalas) {
+    console.log(`Los Delfines ganan ${promDelfines} contra ${promKoalas}`);
+  } else if (promKoalas >= 2 * promDelfines) {
+    console.log(`Los Koalas ganan ${promKoalas} contra ${promDelfines}`);
+  } else {
+    console.log('Ningún equipo gana');
+  }
+};
+
+verificarGanador(promDelfines, promKoalas);
+
+const promDelfines2 = calcularPromedio(85, 54, 41);
+const promKoalas2 = calcularPromedio(23, 34, 27);
+
+verificarGanador(promDelfines2, promKoalas2);
+
+console.log(verificarGanador);
+
+// arrays
+const array1 = [1, 2, '3', 4, true, [1, '2', false, [1, 2]]];
+const array2 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+console.log(array2.length);
+console.log(array2);
+array2.push(4);
+console.log(array2);
+console.log(array2.length);
+console.log(array2[0]);
+console.log(array2[100]);
+array2[100] = 200;
+console.log(array2[100]);
+
+console.log(array2.indexOf(6));
+array2.unshift(11);
+console.log(array2);
+
+array2.sort((a, b) => b - a);
+console.log(array2);
+
+// Ciclos
+// for 
+
+const array3 = [1, 3, 8, 5, 4, 9, 2, 5, 6, 7, 20, 10, 45];
+
+for (let i = 1; i < array3.length; i++) {
+  for (let j = 0; j < array3 - i; j++) {
+    if (array3[i] > array3[i + 1]) {
+      const aux = array3[1];
+      array3[i] = array3[1 + 1];
+      array3[i + 1] = aux;
+    }
+  }
+}
+console.log(array3);
+
+for (let i = 0; i < array3.length - 1; i++) {
+  for (let j = i + 1; j < array3.length; j++) {
+    if (array3[i] > array3[j]) {
+      [array3[i], array3[j]] = [array3[j], array3[i]];
+    }
+  }
+}
+
+console.log(array3);
+
+// i = 0, j = 0, 
+
+// while
+// do .. while
+
+// mutabilidad
+
+
+
